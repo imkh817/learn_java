@@ -1,7 +1,8 @@
-package lambda.functionalinterface;
+package lambda.functionalinterface.basic;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class FunctionalMain {
     public static void main(String[] args) {
@@ -13,5 +14,12 @@ public class FunctionalMain {
         BookService bookService = new BookService();
         List<Book> filterdBooks = bookService.filterPriceMoreThan(books, book -> book.getPrice() > 7000);
         System.out.println("filterdBooks = " + filterdBooks);
+
+        Predicate<Book> priceMoreThan = book -> book.getPrice() > 3000;
+        Predicate<Book> priceLessThan = book -> book.getPrice() < 6000;
+        Predicate<Book> priceGreaterThan = priceMoreThan.and(priceLessThan);
+
+        List<Book> filteredBooks = bookService.filterWithPrice(books, priceGreaterThan);
+        System.out.println("filteredBooks = " + filteredBooks);
     }
 }

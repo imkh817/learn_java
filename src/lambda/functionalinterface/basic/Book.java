@@ -1,4 +1,4 @@
-package lambda.functionalinterface;
+package lambda.functionalinterface.basic;
 
 public class Book {
 

@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+}
+
+group = 'learningJava'
+version = '1.0.0'
+
+sourceCompatibility = '21'   // 컴파일할 자바 버전
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src']  // 예: 기존에 src 폴더에 코드가 있을 때
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.openjdk.jmh:jmh-core:1.37'
+    annotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
+}

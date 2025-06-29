@@ -2,9 +2,11 @@ package stream.practice.practice06;
 
 import stream.practice.practice06.Employee;
 
+import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Practice06Main {
     /**
